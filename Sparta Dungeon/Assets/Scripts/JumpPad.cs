@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    public float jumpForce = 10f;  
+    public float jumpForce = 10f;
+
+    //public void PlatformInteraction()
+    //{
+    //    AddForce(Vector3.up * jumpForce, ForceMode.Impulse();
+    //}
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -16,6 +22,7 @@ public class JumpPad : MonoBehaviour
             }
         }
     }
+
 }
 
 
