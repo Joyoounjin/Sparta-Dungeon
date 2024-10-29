@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,6 +36,19 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("키 눌림");
+   
+                inventory?.Invoke();
+                ToggleCursor();
+
+        }
+    }
+
 
     private void FixedUpdate()
     {
@@ -113,14 +127,15 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    public void OnInventoryButton(InputAction.CallbackContext callbackContext)
-    {
-        if (callbackContext.phase == InputActionPhase.Started)
-        {
-            inventory?.Invoke();
-            ToggleCursor();
-        }
-    }
+    //public void OnInventoryButton(InputAction.CallbackContext callbackContext)
+    //{
+    //    Debug.Log("키 눌림");
+    //    if (callbackContext.phase == InputActionPhase.Started)
+    //    {
+    //        inventory?.Invoke();
+    //        ToggleCursor();
+    //    }
+    //}
 
     void ToggleCursor()
     {

@@ -10,11 +10,11 @@ public class UIInventory : MonoBehaviour
 
     public GameObject inventoryWindow;
     public Transform slotPanel;
-    public Transform dropPosition;
+    //public Transform dropPosition;
 
     [Header("Selected Item")]
-    private ItemSlot selectedItem;
-    private int selectedItemIndex;
+    //private ItemSlot selectedItem;
+    //private int selectedItemIndex;
 
     // UI Inventory 아이템 정보 표시
     public TextMeshProUGUI selectedItemName;
@@ -26,7 +26,7 @@ public class UIInventory : MonoBehaviour
     public GameObject unEquipButton;
     public GameObject dropButton;
 
-    private int curEquipIndex;
+    //private int curEquipIndex;
 
     private PlayerController controller;
     private PlayerCondition condition;
@@ -35,7 +35,7 @@ public class UIInventory : MonoBehaviour
     {
         controller = CharacterManager.Instance.Player.controller;
         condition = CharacterManager.Instance.Player.condition;
-        dropPosition = CharacterManager.Instance.Player.dropPosition;
+        //dropPosition = CharacterManager.Instance.Player.dropPosition;
 
         controller.inventory += Toggle;
         //CharacterManager.Instance.Player.addItem += AddItem;
@@ -54,7 +54,7 @@ public class UIInventory : MonoBehaviour
         ClearSelectedItemWindow();
     }
 
-    public void Toggle() // UI on/off
+    public void Toggle() 
     {
         if (inventoryWindow.activeInHierarchy)
         {
@@ -65,47 +65,46 @@ public class UIInventory : MonoBehaviour
             inventoryWindow.SetActive(true);
         }
     }
-
     public bool IsOpen()
     {
         return inventoryWindow.activeInHierarchy;
     }
 
-    public void AddItem()
-    {
-        ItemData data = CharacterManager.Instance.Player.itemData;
+    //public void AddItem()
+    //{
+    //    ItemData data = CharacterManager.Instance.Player.itemData;
 
-        if (data.canStack) // 중복 가능? 
-        {
-            ItemSlot slot = GetItemStack(data);
-            if (slot != null)
-            {
-                slot.quantity++;
-                //UpdateUI();
-                CharacterManager.Instance.Player.itemData = null;
-                return;
-            }
-        }
+    //    if (data.canStack) // 중복 가능? 
+    //    {
+    //        ItemSlot slot = GetItemStack(data);
+    //        if (slot != null)
+    //        {
+    //            slot.quantity++;
+    //            //UpdateUI();
+    //            CharacterManager.Instance.Player.itemData = null;
+    //            return;
+    //        }
+    //    }
 
-        ItemSlot emptySlot = GetEmptySlot(); // 아니라면 빈 슬롯 
+    //    ItemSlot emptySlot = GetEmptySlot(); // 아니라면 빈 슬롯 
 
-        if (emptySlot != null) 
-        {
-            emptySlot.item = data;
-            emptySlot.quantity = 1;
-            //UpdateUI();
-            CharacterManager.Instance.Player.itemData = null;
-            return;
-        }
+    //    if (emptySlot != null) 
+    //    {
+    //        emptySlot.item = data;
+    //        emptySlot.quantity = 1;
+    //        //UpdateUI();
+    //        CharacterManager.Instance.Player.itemData = null;
+    //        return;
+    //    }
 
-        ThrowItem(data);
-        CharacterManager.Instance.Player.itemData = null;
-    }
+    //    ThrowItem(data);
+    //    CharacterManager.Instance.Player.itemData = null;
+    //}
 
-    public void ThrowItem(ItemData data)
-    {
-        Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
-    }
+    //public void ThrowItem(ItemData data)
+    //{
+    //    Instantiate(data.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360));
+    //}
 
     //public void UpdateUI()
     //{
@@ -122,29 +121,29 @@ public class UIInventory : MonoBehaviour
     //    }
     //}
 
-    ItemSlot GetItemStack(ItemData data)
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == data && slots[i].quantity < data.maxStackAmount)
-            {
-                return slots[i];
-            }
-        }
-        return null;
-    }
+    //ItemSlot GetItemStack(ItemData data)
+    //{
+    //    for (int i = 0; i < slots.Length; i++)
+    //    {
+    //        if (slots[i].item == data && slots[i].quantity < data.maxStackAmount)
+    //        {
+    //            return slots[i];
+    //        }
+    //    }
+    //    return null;
+    //}
 
-    ItemSlot GetEmptySlot()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == null)
-            {
-                return slots[i];
-            }
-        }
-        return null;
-    }
+    //ItemSlot GetEmptySlot()
+    //{
+    //    for (int i = 0; i < slots.Length; i++)
+    //    {
+    //        if (slots[i].item == null)
+    //        {
+    //            return slots[i];
+    //        }
+    //    }
+    //    return null;
+    //}
 
     //public void SelectItem(int index)
     //{
@@ -173,7 +172,7 @@ public class UIInventory : MonoBehaviour
 
     void ClearSelectedItemWindow()
     {
-        selectedItem = null; // 선택한 아이템이 없다면
+        //selectedItem = null; // 선택한 아이템이 없다면
 
         selectedItemName.text = string.Empty;
         selectedItemDescription.text = string.Empty;
@@ -185,6 +184,7 @@ public class UIInventory : MonoBehaviour
         unEquipButton.SetActive(false);
         dropButton.SetActive(false);
     }
+}
 
     //public void OnUseButton()
     //{
@@ -227,8 +227,8 @@ public class UIInventory : MonoBehaviour
     //    UpdateUI();
     //}
 
-    public bool HasItem(ItemData item, int quantity)
-    {
-        return false;
-    }
-}
+//    public bool HasItem(ItemData item, int quantity)
+//    {
+//        return false;
+//    }
+//}
