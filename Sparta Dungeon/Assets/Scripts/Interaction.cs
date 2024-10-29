@@ -20,7 +20,6 @@ public class Interaction : MonoBehaviour
         camera = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - lastCheckTime > checkRate)
