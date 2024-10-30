@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidbody;
 
     public bool canLook = true;
-    public Action inventory;
+    public event Action inventory;
 
     private void Awake()
     {
@@ -41,14 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("키 눌림");
-   
-                inventory?.Invoke();
-                ToggleCursor();
-
+            inventory?.Invoke();
+            ToggleCursor();
         }
     }
 
+    // InputSystem 오류: 키 안 눌린 상태에서 눌렸다고 인식됨. 
 
     private void FixedUpdate()
     {
@@ -129,7 +127,6 @@ public class PlayerController : MonoBehaviour
 
     //public void OnInventoryButton(InputAction.CallbackContext callbackContext)
     //{
-    //    Debug.Log("키 눌림");
     //    if (callbackContext.phase == InputActionPhase.Started)
     //    {
     //        inventory?.Invoke();

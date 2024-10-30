@@ -54,7 +54,7 @@
             "bindings": [
                 {
                     "name": "2D Vector",
-                    "id": "364b2c13-cd18-42d9-a6c1-470fa36cead5",
+                    "id": "ddaa2232-42ab-429a-b5a3-902d72e7f9c6",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -65,74 +65,74 @@
                 },
                 {
                     "name": "up",
-                    "id": "05049593-d808-424b-ac4e-aed22f5537f8",
+                    "id": "83debe59-efa2-4504-93d3-4285e2e92308",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "e35f877a-351c-4f2e-9d67-3f3a623ce7a9",
+                    "id": "fa3bb2b3-552f-4ad3-b8f6-eac5b3cdc3a6",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "1488bb19-4481-4a8c-b853-b7129023723e",
+                    "id": "32cf6ff6-e917-4a8b-ae80-664f8279f3ed",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "2403f572-2179-4b49-bf9a-1b6bb5d3b368",
+                    "id": "98d0d7dc-f8ff-4a1f-be20-83bc4e4e15ea",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "49b93673-af07-495b-965b-5ea30b8b500a",
+                    "id": "c9301ff7-5b10-41ff-99ce-dfc74e551b72",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "040e9695-0ccb-4e79-ad97-0a36370e135c",
+                    "id": "627d8e2a-e9c5-4ba4-a168-f694c02893a8",
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "PC",
+                    "groups": "",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3cd39ea6-00bf-42ae-898b-5c05d289c165",
-                    "path": "<Keyboard>/tab",
+                    "id": "09a6c5fc-6d91-4afc-8184-b9f45e0daedf",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -142,7 +142,7 @@
                 },
                 {
                     "name": "",
-                    "id": "67700283-2767-4085-a3ba-b6f1d57e1160",
+                    "id": "60310ccf-2c21-4e78-94ef-20660568cdee",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
@@ -154,22 +154,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "PC",
-            "bindingGroup": "PC",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }

@@ -19,21 +19,22 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         {
             Die();
         }
-    }
+    } 
 
     public void Heal(float amount)
     {
         HP.Add(amount);
-    }
+        stamina.Add(amount);
+    } // ------ 회복 (사용하기 버튼) ------ 
 
     public void Die()
     {
-        Debug.Log("플레이어가 죽었다.");
-    }
+        Destroy(gameObject);
+    } // ------ 죽었을 때 ------
 
     public void TakePhysicalDamage(int damageAmount)
     {
         HP.Subtract(damageAmount);
         onTakeDamage?.Invoke();
-    }
+    } // ------ 데미지 입었을 때 ------
 }
